@@ -1,6 +1,6 @@
 name: Inputs context
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       your_name:
         required: true
