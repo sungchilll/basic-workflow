@@ -1,10 +1,11 @@
 name: Steps Workflow
 on: workflow_dispatch
 jobs:
-  notify:
+  backup-steps:
     runs-on: ubuntu-latest
     steps:
-      - id: random
-        run: exit $(($RANDOM % 2 == 0))
-      - if: always()
-        run: echo ${{ steps.random.outcome }}
+      - name: first-step
+        run: exit 1
+      - name: backup-step
+        if: failure()
+        run: echo backup
