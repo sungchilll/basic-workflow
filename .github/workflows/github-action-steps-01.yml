@@ -1,11 +1,10 @@
 name: Steps Workflow
 on: workflow_dispatch
 jobs:
-  backup-steps:
+  keep-going-work:
     runs-on: ubuntu-latest
     steps:
-      - name: first-step
+      - id: dev
+        continue-on-error: true
         run: exit 1
-      - name: backup-step
-        if: failure()
-        run: echo backup
+      - run: echo "Keep going job"
