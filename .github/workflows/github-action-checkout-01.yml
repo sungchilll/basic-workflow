@@ -7,5 +7,6 @@ jobs:
       - run: ls -al
       - uses: actions/checkout@v4
         with:
-          path: checkout-dir
-      - run: ls -al checkout-dir
+          repository: actions/checkout
+          ref: v4
+      - run: ls -al
